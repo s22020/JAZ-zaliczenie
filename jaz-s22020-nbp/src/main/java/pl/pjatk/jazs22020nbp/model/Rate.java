@@ -3,8 +3,6 @@ package pl.pjatk.jazs22020nbp.model;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Entity
 public class Rate {
@@ -16,17 +14,17 @@ public class Rate {
     @Column
     private Gold gold;
     @Column
-    private LocalDate startdate;
+    private Date startdate;
     @Column
-    private LocalDate enddate;
+    private Date enddate;
     @Column
     private Double rate;
     @Column
-    private LocalDate querydate;
+    private Date querydate;
     @Column
-    private LocalTime querytime;
+    private Time querytime;
 
-    public Rate(Integer id, Gold gold, LocalDate startdate, LocalDate enddate, Double rate, LocalDate querydate, LocalTime querytime) {
+    public Rate(Integer id, Gold gold, Date startdate, Date enddate, Double rate, Date querydate, Time querytime) {
         this.id = id;
         this.gold = gold;
         this.startdate = startdate;
@@ -56,19 +54,19 @@ public class Rate {
         this.gold = gold;
     }
 
-    public LocalDate getStartdate() {
+    public Date getStartdate() {
         return startdate;
     }
 
-    public void setStartdate(LocalDate startdate) {
+    public void setStartdate(Date startdate) {
         this.startdate = startdate;
     }
 
-    public LocalDate getEnddate() {
+    public Date getEnddate() {
         return enddate;
     }
 
-    public void setEnddate(LocalDate enddate) {
+    public void setEnddate(Date enddate) {
         this.enddate = enddate;
     }
 
@@ -80,19 +78,19 @@ public class Rate {
         this.rate = rate;
     }
 
-    public LocalDate getQuerydate() {
+    public Date getQuerydate() {
         return querydate;
     }
 
-    public void setQuerydate(LocalDate querydate) {
+    public void setQuerydate(Date querydate) {
         this.querydate = querydate;
     }
 
-    public LocalTime getQuerytime() {
+    public Time getQuerytime() {
         return querytime;
     }
 
-    public void setQuerytime(LocalTime querytime) {
+    public void setQuerytime(Time querytime) {
         this.querytime = querytime;
     }
 }
