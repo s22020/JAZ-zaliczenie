@@ -1,10 +1,7 @@
 package pl.pjatk.jazs22020nbp.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.pjatk.jazs22020nbp.model.Rate;
 import pl.pjatk.jazs22020nbp.service.JazS22020NbpService;
 
@@ -20,8 +17,13 @@ public class JazS22020NbpRestController {
         this.jazS22020NbpService = jazS22020NbpService;
     }
 
-    @GetMapping("/{startDate}/{endDate}")
-    public ResponseEntity<String> getRate(@RequestParam LocalDate startdate, @RequestParam LocalDate enddate) {
-        return ResponseEntity.ok(jazS22020NbpService.getNbpRate(startdate, enddate));
+//    @GetMapping("/{startDate}/{endDate}")
+@GetMapping("/rate")
+public ResponseEntity<String> getRate(@RequestParam String startdate, @RequestParam String enddate) {
+//        String b = "asd";
+        LocalDate a = LocalDate.parse(startdate);
+        LocalDate b = LocalDate.parse(enddate);
+        return ResponseEntity.ok(jazS22020NbpService.getNbpRate(a, b));
+//        return ResponseEntity.ok(jazS22020NbpService.getNbpRate(startdate, enddate));
     }
 }
