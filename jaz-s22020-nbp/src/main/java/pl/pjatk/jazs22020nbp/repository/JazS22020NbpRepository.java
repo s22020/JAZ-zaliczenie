@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import pl.pjatk.jazs22020nbp.model.Rate;
 
 public interface JazS22020NbpRepository extends JpaRepository<Rate, Integer> {
-    Rate save(String rate);
+    String save(Rate rate);
 }

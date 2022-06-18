@@ -3,10 +3,13 @@ package pl.pjatk.jazs22020nbp.service;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import pl.pjatk.jazs22020nbp.model.Gold;
+import pl.pjatk.jazs22020nbp.model.Rate;
 import pl.pjatk.jazs22020nbp.repository.JazS22020NbpRepository;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Service
 public class JazS22020NbpService {
@@ -17,12 +20,19 @@ public class JazS22020NbpService {
         this.jazS22020NbpRepository = jazS22020NbpRepository;
     }
 
-    public String getNbpRate(Date startDate, Date endDate) {
+    public String getNbpRate(LocalDate startDate, LocalDate endDate) {
         final String uri = "http://api.nbp.pl/api/cenyzlota/{startDate}/{endDate}";
 
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(uri, String.class, startDate, endDate);
-        jazS22020NbpRepository.save(result);
+//        jazS22020NbpRepository.save(result);
+        Double resu = Double.parseDouble(result);
+        Rate rate = new Rate(0, Gold.GOLD, startDate, endDate, resu, LocalDate.now(), LocalTime.now());
+        saveRate(rate);
         return result;
+    }
+
+    public void saveRate(Rate rate) {
+        jazS22020NbpRepository.save(rate);
     }
 }
