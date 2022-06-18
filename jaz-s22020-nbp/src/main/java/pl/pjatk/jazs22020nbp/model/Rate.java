@@ -34,6 +34,10 @@ public class Rate {
         this.querytime = querytime;
     }
 
+    public Rate() {
+
+    }
+
     public Integer getId() {
         return id;
     }
