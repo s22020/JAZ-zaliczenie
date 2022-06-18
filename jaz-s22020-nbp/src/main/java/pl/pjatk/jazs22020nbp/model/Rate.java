@@ -3,6 +3,8 @@ package pl.pjatk.jazs22020nbp.model;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 public class Rate {
@@ -14,17 +16,17 @@ public class Rate {
     @Column
     private Gold gold;
     @Column
-    private Date startdate;
+    private LocalDate startdate;
     @Column
-    private Date enddate;
+    private LocalDate enddate;
     @Column
     private Double rate;
     @Column
-    private Date querydate;
+    private LocalDate querydate;
     @Column
-    private Time querytime;
+    private LocalTime querytime;
 
-    public Rate(Integer id, Gold gold, Date startdate, Date enddate, Double rate, Date querydate, Time querytime) {
+    public Rate(Integer id, Gold gold, LocalDate startdate, LocalDate enddate, Double rate, LocalDate querydate, LocalTime querytime) {
         this.id = id;
         this.gold = gold;
         this.startdate = startdate;
@@ -54,19 +56,19 @@ public class Rate {
         this.gold = gold;
     }
 
-    public Date getStartdate() {
+    public LocalDate getStartdate() {
         return startdate;
     }
 
-    public void setStartdate(Date startdate) {
+    public void setStartdate(LocalDate startdate) {
         this.startdate = startdate;
     }
 
-    public Date getEnddate() {
+    public LocalDate getEnddate() {
         return enddate;
     }
 
-    public void setEnddate(Date enddate) {
+    public void setEnddate(LocalDate enddate) {
         this.enddate = enddate;
     }
 
@@ -78,19 +80,19 @@ public class Rate {
         this.rate = rate;
     }
 
-    public Date getQuerydate() {
+    public LocalDate getQuerydate() {
         return querydate;
     }
 
-    public void setQuerydate(Date querydate) {
+    public void setQuerydate(LocalDate querydate) {
         this.querydate = querydate;
     }
 
-    public Time getQuerytime() {
+    public LocalTime getQuerytime() {
         return querytime;
     }
 
-    public void setQuerytime(Time querytime) {
+    public void setQuerytime(LocalTime querytime) {
         this.querytime = querytime;
     }
 }
