@@ -14,24 +14,24 @@ public class Rate {
     @Column
     private Gold gold;
     @Column
-    private Date startdate;
+    private Date startDate;
     @Column
-    private Date enddate;
+    private Date endDate;
     @Column
     private Double rate;
     @Column
-    private Date querydate;
+    private Date queryDate;
     @Column
-    private Time querytime;
+    private Time queryTime;
 
-    public Rate(Integer id, Gold gold, Date startdate, Date enddate, Double rate, Date querydate, Time querytime) {
+    public Rate(Integer id, Gold gold, Date startDate, Date endDate, Double rate, Date queryDate, Time queryTime) {
         this.id = id;
         this.gold = gold;
-        this.startdate = startdate;
-        this.enddate = enddate;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.rate = rate;
-        this.querydate = querydate;
-        this.querytime = querytime;
+        this.queryDate = queryDate;
+        this.queryTime = queryTime;
     }
 
     public Rate() {
@@ -54,20 +54,20 @@ public class Rate {
         this.gold = gold;
     }
 
-    public Date getStartdate() {
-        return startdate;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStartdate(Date startdate) {
-        this.startdate = startdate;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Date getEnddate() {
-        return enddate;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEnddate(Date enddate) {
-        this.enddate = enddate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public Double getRate() {
@@ -78,19 +78,19 @@ public class Rate {
         this.rate = rate;
     }
 
-    public Date getQuerydate() {
-        return querydate;
+    public Date getQueryDate() {
+        return queryDate;
     }
 
-    public void setQuerydate(Date querydate) {
-        this.querydate = querydate;
+    public void setQueryDate(Date queryDate) {
+        this.queryDate = queryDate;
     }
 
-    public Time getQuerytime() {
-        return querytime;
+    public Time getQueryTime() {
+        return queryTime;
     }
 
-    public void setQuerytime(Time querytime) {
-        this.querytime = querytime;
+    public void setQueryTime(Time queryTime) {
+        this.queryTime = queryTime;
     }
 }
