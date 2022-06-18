@@ -12,6 +12,7 @@ public class Rate {
     @Column
     private Integer id;
     @Column
+    @Enumerated(EnumType.STRING)
     private Gold gold;
     @Column
     private Date startDate;
